@@ -40,9 +40,9 @@ class Sql
         $resultat->execute();
     }
 
-    public function __destruct()
-    {
-        if(isset($this->connexion))
-            $this->connexion = null;
-    }
+    // public function __destruct()
+    // {
+        // if(isset($this->connexion))
+            // $this->connexion = false;
+    // }
 }

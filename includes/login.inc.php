@@ -3,7 +3,7 @@
 
 if (isset($_POST['frmLogin'])) {
     $mail = htmlentities(trim($_POST['mail']));
-    $mdp = htmlentities(trim($_POST['mdp']));
+    $mdp = htmlentities(trim($_POST['password']));
 
     $erreurs = array();
 
@@ -27,6 +27,8 @@ if (isset($_POST['frmLogin'])) {
         echo $messageErreur;
         include './includes/frmLogin.php';
     } else {
+                
+      
         $requeteLogin = "SELECT password FROM utilisateurs WHERE mail='$mail'";
         $sqlLogin = new Sql();
         $resultatLogin = $sqlLogin->lister($requeteLogin);
@@ -53,7 +55,7 @@ if (isset($_POST['frmLogin'])) {
 
         $url = $_SERVER['HTTP_ORIGIN'] . dirname($_SERVER['REQUEST_URI']) . "/";
 
-        echo redirection($url, 2000);
+        echo redirection($url, 2222000);
         echo "<p><a href=\"$url\">Revenir à la page d'accueil</a></p>";
     }
 } else {

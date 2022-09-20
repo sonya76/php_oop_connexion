@@ -4,8 +4,8 @@
         <input type="text" id="mail" name="mail" value="<?= $mail ?>" required />
     </div>
     <div>
-        <label for="mdp">Mot de passe :</label>
-        <input type="password" id="mdp" name="mdp" required />
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
     </div>
     <div>
         <input type="reset" value="Effacer" />

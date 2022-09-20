@@ -8,7 +8,7 @@ En faisant vos recherches créer une classe php pour se connecter à un site web
 
 ## Git
 
-- Faite un **fork** du depot []()
+- Faite un **fork** du depot [https://github.com/formeka/php_oop_connexion](https://github.com/formeka/php_oop_connexion)
 - Travailler dans une branche **develop**
 - Faire des **commits atomiques**
 - Tous vos **commits** doivent commencer par une majuscule

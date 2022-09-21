@@ -27,23 +27,23 @@ if (isset($_POST['frmLogin'])) {
         echo $messageErreur;
         include './includes/frmLogin.php';
     } else {
-                
       
-        $requeteLogin = "SELECT password FROM utilisateurs WHERE mail='$mail'";
+        $requeteLogin = "SELECT * FROM utilisateurs WHERE mail='$mail'";
         $sqlLogin = new Sql();
         $resultatLogin = $sqlLogin->lister($requeteLogin);
-
+       
         if (count($resultatLogin) > 0) {
             // Traitement pour vérifier le mot de passe
             $resultatPassword = $resultatLogin[0]['password'];
 
             if (password_verify($mdp, $resultatPassword)) {
-                $message = "Vous êtes connecté";
+                $message = $mail." Vous êtes connecté";
                 $_SESSION['login'] = true;
 
                 $messageEmail = $mail . ' vous êtes connecté !';
-                sendEmail($mail, 'contact@ceppic-php-file-rouge.fr', 'Login Success', $messageEmail);
+                // sendEmail($mail, 'contact@ceppic-php-file-rouge.fr', 'Login Success', $messageEmail);
             } else {
+                echo   password_verify($mdp, $resultatPassword);
                 $message = "Erreur d'authentification";
                 $_SESSION['login'] = false;
             }
